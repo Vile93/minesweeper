@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles.css" />
+        <title>Сапёр</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Сапёр</h1>
+            <form class="game-form">
+                <div class="form-container">
+                    <label for="field-size">Размер поля</label>
+                    <input
+                        id="field-size"
+                        type="number"
+                        class="field-size"
+                        min="2"
+                        max="40"
+                        step="1"
+                        value="10"
+                        required
+                        autofocus
+                    />
+                    <label for="count-of-mines">Количество мин</label>
+                    <input
+                        id="count-of-mines"
+                        type="number"
+                        class="count-of-mines"
+                        min="1"
+                        step="1"
+                        value="25"
+                        required
+                    />
+                </div>
+                <div class="start-game">
+                    <button class="btn-start" type="submit">
+                        Начать новую игру
+                    </button>
+                </div>
+                <div class="error-status"></div>
+            </form>
+
+            <div class="board"></div>
+            <div class="player-status"></div>
+        </div>
+        <script src="../domain/Cell.js"></script>
+        <script src="../domain/Gameboard.js"></script>
+        <script src="../application/Game.js"></script>
+        <script src="../architecture/script.js"></script>
+    </body>
+</html>

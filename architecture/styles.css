@@ -1,0 +1,170 @@
+* {
+    background-color: #f4f4f4;
+    color: #040404;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+.container {
+    max-width: 80vw;
+    margin: 30px auto 0;
+}
+.form-container {
+    margin: 20px auto;
+    font-size: 1.4em;
+    display: grid;
+    width: 80%;
+    gap: 10px;
+    height: 180px;
+    grid-template-columns: [labels] 1fr [inputs] 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+label,
+input {
+    font-size: calc(1vw + 1vh + 2vmin);
+}
+label {
+    grid-column: labels;
+    font-weight: bold;
+    align-self: center;
+}
+input {
+    grid-column: inputs;
+    padding-left: 10px;
+}
+.start-game {
+    display: flex;
+    justify-content: center;
+}
+.btn-start {
+    border-radius: 4%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 2em;
+    background-color: #587574;
+    color: aliceblue;
+    border: none;
+}
+.btn-start:hover {
+    background-color: #ce8e2f;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    background: url('./images/minesweeper.gif');
+    width: 16px;
+    height: 16px;
+    scale: 3;
+    margin: 16px;
+}
+
+.closed {
+    background-position: 144px -40px;
+}
+.closed:active,
+.opened {
+    background-position: 144px -23px;
+}
+.mine {
+    background-position: 80px -40px;
+}
+
+.lose-mine {
+    background-position: -32px -39px;
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight {
+    transition: none;
+}
+.one {
+    background-position: -16px -23px;
+}
+.two {
+    background-position: -32px -23px;
+}
+
+.three {
+    background-position: -48px -23px;
+}
+
+.four {
+    background-position: -64px -23px;
+}
+.five {
+    background-position: -80px -23px;
+}
+
+.six {
+    background-position: -96px -23px;
+}
+
+.seven {
+    background-position: -112px -23px;
+}
+.eight {
+    background-position: -128px -23px;
+}
+.flag {
+    background-position: -16px -39px;
+}
+.incorrect-flag {
+    background-position: -48px -39px;
+}
+.player-status {
+    margin: 0.5em 0;
+    font-size: 2em;
+    text-align: center;
+}
+
+.error-status {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #750808;
+}
+@media (max-width: 768px) {
+    * {
+        font-size: 1em;
+    }
+    .form-container {
+        height: 120px;
+    }
+    input {
+        font-size: 1em;
+    }
+    .form-container {
+        font-size: 0.8em;
+    }
+    .container {
+        max-width: 100vw;
+        margin: 30px auto 0px;
+    }
+    .board {
+        width: 100%;
+    }
+    .cell {
+        scale: 1.5;
+        margin: 4px;
+    }
+}
